@@ -57,7 +57,7 @@ body {
 }
 /* HERO */
 #hero{
-    background: url(/images/banner-img-1.jpg) top/cover;
+    background: url(../images/banner-img-1.jpg) top/cover;
 }
 .carousel-inner h1{
     font-size: 60px;
@@ -86,4 +86,10 @@ body {
 .special-img span {
     top: 20px;
     right: 20px;
+}
+.special-img:hover img{
+    transform: scale(1.2);
+}
+.special-img img{
+    transition: all 0.3s ease;
 }
