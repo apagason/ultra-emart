@@ -20,6 +20,28 @@
 </head>
 
 <body>
+    <!-- ---- Theme Change ---- -->
+    <button id="theme_button" class="btn btn-theme" onclick="onThemeChange()">
+        <i id="theme_icon" class="fa fa-moon"></i>
+    </button>
+
+    <script>
+        function onThemeChange() {
+            // Variables
+            let cssStyleSheet = document.getElementById("mainStyle");
+            let cssLength = cssStyleSheet.href.length;
+            let path = cssStyleSheet.href.substring(cssLength - 9, cssLength);
+
+            if (path === "/auth.css") {
+                cssStyleSheet.href = "css/auth_dark.css";
+                document.getElementById("theme_icon").className = "fa fa-sun";
+            } else {
+                cssStyleSheet.href = "css/auth.css"
+                document.getElementById("theme_icon").className = "fa fa-moon";
+            }
+        }
+    </script>
+
     <div class="page-content d-flex align-items-center">
         <div class="container d-flex justify-content-center">
             <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5">
@@ -44,42 +66,19 @@
                         <div class="mb-3">
                             <input type="password" class="form-control auth-input" placeholder="Password">
                         </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control auth-input" placeholder="Confirm Password">
+                        </div>
                         <button class="btn auth-btn mt-2 mb-4 bg-secondary w-100 text-white"
-                            type="submit">Login</button>
+                            type="submit">Register</button>
                     </form>
-                    <p class="text-center mb-1">
-                        <a href="index.html" class="text-muted">Forgot Password?</a>
-                    </p>
-                    <p class="text-center mb-4">
-                        Don't have an account?
-                        <a href="signup.html" class="text-muted">Register here</a>
+                    <p class="text-center mb-4">Already have an account?
+                        <a href="login.html" class="text-muted"> Login now</a>
                     </p>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- ---- Theme Change ---- -->
-    <button id="theme_button" class="btn btn-theme" onclick="onThemeChange()">
-        <i id="theme_icon" class="fa fa-moon"></i>
-    </button>
-
-    <script>
-        function onThemeChange() {
-            // Variables
-            let cssStyleSheet = document.getElementById("mainStyle");
-            let cssLength = cssStyleSheet.href.length;
-            let path = cssStyleSheet.href.substring(cssLength - 9, cssLength);
-
-            if (path === "/auth.css") {
-                cssStyleSheet.href = "css/auth_dark.css";
-                document.getElementById("theme_icon").className = "fa fa-sun";
-            } else {
-                cssStyleSheet.href = "css/auth.css"
-                document.getElementById("theme_icon").className = "fa fa-moon";
-            }
-        }
-    </script>
 </body>
 
 </html>
